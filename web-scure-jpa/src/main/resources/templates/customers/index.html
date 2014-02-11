@@ -2,12 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-	<head>
+	<head th:replace="/fragment/common :: headerFragment">
 	<meta charset="US-ASCII" />
 	<title>Customers List</title>
 	</head>
 	<body>
-	  <table>
+	  <nav th:replace="fragment/common :: navFragment"></nav>
+	  <table class="table table-bordered table-hover">
+	   <thread>
+	   	<th>
+	   		
+	   	</th>
+	   </thread>
 	  	<tbody>
 	  		<tr th:each="customer : ${customers}" >
 	  			<td th:text="${customer.name + ' |-| ' + customer.accountNumber }">
