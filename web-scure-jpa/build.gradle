@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        maven { url "http://repo.spring.io/libs-snapshot" }
+        mavenLocal()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.0.RC1")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'gs-securing-web-jpa'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+    maven { url "http://repo.spring.io/libs-snapshot" }
+    maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
+    maven { url "https://repository.jboss.org/nexus/content/groups/public/" }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:1.0.0.RC1")
+    compile("org.springframework.boot:spring-boot-starter-security:1.0.0.RC1")
+    compile("org.thymeleaf:thymeleaf-spring4:2.1.2.RELEASE")
+    compile("org.springframework:spring-orm:4.0.0.RELEASE")
+    compile("org.springframework.data:spring-data-jpa:1.4.1.RELEASE")
+    compile("org.hibernate:hibernate-entitymanager:4.2.1.Final")
+    compile("postgresql:postgresql:9.1-901.jdbc4")
+    compile("org.projectlombok:lombok:1.12.4")
+    testCompile("junit:junit:4.11")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.8'
+}

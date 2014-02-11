@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head>
+	<meta charset="US-ASCII" />
+	<title>Customers List</title>
+	</head>
+	<body>
+	  <table>
+	  	<tbody>
+	  		<tr th:each="customer : ${customers}" >
+	  			<td th:text="${customer.name}">
+	  				Name
+	  			</td>
+	  		</tr>
+	  	</tbody>
+	  </table>
+	</body>
+</html>
