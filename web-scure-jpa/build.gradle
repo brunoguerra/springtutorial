@@ -40,8 +40,3 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = '1.8'
 }
-
-applicationDefaultJvmArgs = ["-javaagent:/Users/brunoguerra/dev/java/springloaded.jar", "-noverify"]
-
-// you could also use the memory properties on JavaForkOptions directly;
-// see http://www.gradle.org/docs/current/javadoc/org/gradle/process/JavaForkOptions.html

@@ -7,11 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-public class Customer implements Serializable {
+public @Data class Customer implements Serializable {
 
 	private static final long serialVersionUID = 5828672055468787638L;
 
@@ -19,9 +20,8 @@ public class Customer implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	@Getter @Setter
 	private int accountNumber;
-	@Getter @Setter
+	
 	private String name;
 	
 	public Customer() {
@@ -38,8 +38,4 @@ public class Customer implements Serializable {
 				"Customer %s with account %d", 
 				name, accountNumber);
 	}
-	
-	
-	
-	
 }
