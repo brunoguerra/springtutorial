@@ -85,8 +85,9 @@ public class Application {
         return localeResolver;
     }
 
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(localeChangeInterceptor());
+    @Override
+    protected void addInterceptors(InterceptorRegistry registry) {
+	registry.addInterceptor(localeChangeInterceptor());
     }
 	
     public static void main(String[] args) throws Throwable {
